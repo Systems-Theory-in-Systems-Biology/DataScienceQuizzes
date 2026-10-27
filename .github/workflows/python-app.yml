@@ -1,0 +1,126 @@
+name: Excel zu JSON Converter
+
+on:
+  push:
+    paths:
+      - '**.xlsx'
+
+permissions:
+  contents: read
+
+jobs:
+  convert:
+    name: Excel konvertieren
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    outputs:
+      input_file: ${{ steps.excel.outputs.file }}
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Geänderte Excel-Datei ermitteln
+        id: excel
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          # Bei einem initialen Push alle vorhandenen Excel-Dateien
+          # berücksichtigen. Andernfalls Änderungen zwischen den
+          # beiden Commits ermitteln.
+          if [[ "$BEFORE" =~ ^0+$ ]]; then
+            mapfile -t candidates < <(git ls-files -- '*.xlsx')
+          else
+            mapfile -t candidates < <(
+              git diff --name-only \
+                --diff-filter=AMR \
+                "$BEFORE" "$AFTER" -- '*.xlsx'
+            )
+          fi
+
+          files=()
+
+          # Temporäre Excel-Dateien ignorieren.
+          for file in "${candidates[@]}"; do
+            basename="${file##*/}"
+            [[ "$basename" == '~$'* ]] && continue
+            files+=("$file")
+          done
+
+          # Bei einer Löschung gibt es keine zu konvertierende Datei.
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "file=" >> "$GITHUB_OUTPUT"
+            echo "Keine hinzugefügte oder geänderte Excel-Datei gefunden."
+            exit 0
+          fi
+
+          # Mehrere Eingabedateien sind mehrdeutig.
+          if [[ ${#files[@]} -ne 1 ]]; then
+            echo "Erwartet genau eine geänderte Excel-Datei." >&2
+            printf 'Gefunden: %s\n' "${files[@]}" >&2
+            exit 1
+          fi
+
+          echo "Excel-Datei: ${files[0]}"
+          echo "file=${files[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Python einrichten
+        if: steps.excel.outputs.file != ''
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Abhängigkeiten installieren
+        if: steps.excel.outputs.file != ''
+        run: python -m pip install pandas openpyxl
+
+      - name: Converter ausführen
+        if: steps.excel.outputs.file != ''
+        env:
+          INPUT_XLSX: ${{ steps.excel.outputs.file }}
+        run: python converter.py "$INPUT_XLSX"
+
+      - name: Generierte JSON bereitstellen
+        if: steps.excel.outputs.file != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: generated-json
+          path: questions.json
+          if-no-files-found: error
+          retention-days: 1
+
+  commit:
+    name: JSON aktualisieren
+    needs: convert
+    if: needs.convert.outputs.input_file != ''
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v7
+
+      - name: Generierte JSON herunterladen
+        uses: actions/download-artifact@v8
+        with:
+          name: generated-json
+          path: generated
+
+      - name: questions.json ersetzen
+        run: cp generated/questions.json questions.json
+
+      - name: Nur questions.json committen
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Automatische Konvertierung von Excel zu JSON"
+          file_pattern: "questions.json"

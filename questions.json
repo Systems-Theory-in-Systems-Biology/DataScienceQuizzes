@@ -1,0 +1,187 @@
+{
+  "Vorlesung 1 und 2": [
+    {
+      "text": "Was beschreibt der Definitionsbereich \\( D \\) einer reellwertigen 1D-Funktion \\( f\\colon D \\to \\mathbb{R} \\)?",
+      "answers": [
+        "Die Menge aller Eingabewerte \\( x \\in \\mathbb{R} \\) für die \\( f(x) \\) sinnvoll definiert ist",
+        "Nur die positiven reellen Zahlen \\( \\mathbb{R}^+ \\)",
+        "Den Bereich, in dem die Funktion ausschließlich monoton steigend ist",
+        "Die Menge aller Funktionswerte, die die Funktion annehmen kann"
+      ],
+      "correct": 0,
+      "tipp": "Jeder Eingabe (x) wird genau ein Ausgabewert (y) zugeordnet (Skript S.6)",
+      "merksatz": "Der Definitionsbereich = alle erlaubten x-Werte",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Welche Bedingung muss eine Funktion \\( f\\colon D \\to \\mathbb{R} \\) erfüllt sein, damit sie injektiv ist?",
+      "answers": [
+        "Für alle \\( x_1, x_2 \\in D \\) gilt: \\( x_1 \\neq x_2 \\Rightarrow f(x_1) \\neq f(x_2) \\)",
+        "Der Bildbereich \\( W(f) \\) muss der gesamten Menge der reellen Zahlen entsprechen",
+        "Die Funktion muss überall stetig und differenzierbar sein",
+        "Jedem Funktionswert \\( y \\) werden mindestens zwei Eingabewerte \\( x \\) zugeordnet"
+      ],
+      "correct": 0,
+      "tipp": "Injektivität = Eindeutigkeit (Skript S. 10)",
+      "merksatz": "Injektiv = Jedes Y-Wert hat höchstens ein X-Wert",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Warum ist die Funktion \\( f(x) = x^2 \\) für \\( f\\colon \\mathbb{R} \\to \\mathbb{R} \\) nicht surjektiv",
+      "answers": [
+        "Weil der Bildbereich \\( W(f) = \\mathbb{R}^+ \\) umfasst und somit negative Werte nie als Funktionswerte angenommen werden ",
+        "Weil sie streng monoton steigend auf ganz \\( \\mathbb{R} \\) ist",
+        "Weil nicht negative reelle Zahlen nie erreicht werden",
+        "Weil sie keine Nullstellen besitzt"
+      ],
+      "correct": 0,
+      "tipp": "Auf welche Werte bildet die Funktion ab? (Skript S. 13)",
+      "merksatz": "Surjektivität = alle y-Werte werden abgedeckt",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Welche Aussage beschreibt eine bijektive Funktion am besten?",
+      "answers": [
+        "Jedes Element der Zielmenge (Y) wird von genau einem Element der Definitionsmenge (X) getroffen ",
+        "Es werden alle Y-Werte mindestens einmal getroffen, manche aber auch mehrfach",
+        "Verschiedene X-Werte haben immer verschiedene Y-Werte, aber manche Y-Werte werden gar nicht getroffen",
+        "Jeder X-Wert hat genau einen Y-Wert, aber manche Y-Werte werden doppelt getroffen"
+      ],
+      "correct": 0,
+      "tipp": "Bijektiv = Kombination aus injektiv und surjektiv (Skript S. 14)",
+      "merksatz": "Bijektiv = one to one in beide Richtungen",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Zu welcher Art von Funktionen gehört die Michaelis Menten Gleichung (\\( v(S) = \\frac{V_{\\max} \\cdot S}{K_m + S} \\))",
+      "answers": [
+        "Zu den echt gebrochen-rationalen Funktionen, da der Grad des Zählers (1) gleich dem Grad des Nenners (1) ist",
+        "Zu den unecht gebrochen-rationalen Funktionen, weil man den Term durch Polynomdivision vereinfachen kann",
+        "Zu den linearen Funktionen, weil die Kurve im Diagramm stetig ansteigt",
+        "Zu den Exponentialfunktionen, da sich die Reaktionsgeschwindigkeit einem Sättigungswert annähert"
+      ],
+      "correct": 0,
+      "tipp": "Unecht gebrochen: Zählergrad ist größer als der Nennergrad bei den Polynomen (Skript S. 9)",
+      "merksatz": "Jede Funktion, die ein x unter dem Bruchstrich hat, ist gebrochen-rational – solange das x dort nicht in einer Wurzel oder einem Logarithmus gefangen ist\nUnecht gebrochen: Zählergrad ist größer als der Nennergrad\nEcht gebrochen: Zählergrad gleich oder kleiner als der Nennergrad",
+      "difficulty": "easy"
+    },
+ 
+    {
+      "text": "Wann ist eine Funktion \\( f\\colon D \\to \\mathbb{R} \\) auf einem Intervall streng monoton steigend?",
+      "answers": [
+        "Falls alle \\( x_1, x_2 \\in D \\) mit \\( x_1 < x_2 \\) gilt: \\( f(x_1) < f(x_2) \\)",
+        "Falls alle \\( x_1, x_2 \\in D \\) mit \\( x_1 < x_2 \\) gilt: \\( f(x_1) > f(x_2) \\)",
+        "Falls \\( f'(x) = 0 \\) für alle Eingabewerte gilt",
+        "Falls alle \\( x_1, x_2 \\in D \\) mit \\( x_1 \\le x_2 \\) gilt: \\( f(x_1) \\le f(x_2) \\)"
+      ],
+      "correct": 0,
+      "tipp": "Wie muss die Steigung der Funktion sich verhalten? (Skript S. 15)",
+      "merksatz": "Streng monoton steigend = es geht permanent bergauf",
+      "difficulty": "easy"
+    },
+    {
+      "text": "In der Modellierung eines radioaktiven Zerfalls mittels \\( f(x) = a e^{-bx} \\) steht \\( x \\) für die Zeit. Welche Bedeutung hat der Parameter \\( a \\)?",
+      "answers": [
+        "Er entspricht der Anzahl der Kerne zum Startzeitpunkt",
+        "Er stellt die minimale Menge an Kernen dar",
+        "Er beschreibt die Halbwertszeit des Zerfalls",
+        "Er gibt die Zerfallsrate pro Stunde an"
+      ],
+      "correct": 0,
+      "tipp": "",
+      "merksatz": "",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Was bedeutet es geometrisch, wenn eine Funktion \\( f(x) \\) eine Nullstelle bei \\( x = 3 \\) hat?",
+      "answers": [
+        "Der Graph der Funktion schneidet oder berührt die X-Achse genau beim Wert 3, weil der zugehörige Y-Wert dort 0 ist",
+        "Der Graph der Funktion schneidet die Y-Achse genau beim Wert 3",
+        "Wenn man für \\( x \\) den Wert 0 einsetzt, kommt als Ergebnis \\( y = 3 \\) heraus",
+        "Die Funktion hat an dieser Stelle ihre steilste Stelle und die Steigung ist dort Null"
+      ],
+      "correct": 0,
+      "tipp": "x = 0 (Skript S. 10)",
+      "merksatz": "Nullstellen: x=0. Es sind Schnitt- oder Berührstellen mit der X-Achse",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Wie ist die Umkehrfunktion einer injektiven Funktion \\( f\\colon D \\to \\mathbb{R} \\) definiert?",
+      "answers": [
+        "Als Funktion \\( f^{-1}\\colon W(f) \\to D \\), die jedem Element \\( y \\) sein eindeutiges Urbild zuordnet",
+        "Als \\( f^{-1}(y) = \\frac{1}{f(x)} \\)",
+        "Als Spiegelung des Funktionsgraphen an der x-Achse",
+        "Als Ableitung der Funktion \\( f(x) \\)"
+      ],
+      "correct": 0,
+      "tipp": "Wenn du den Graphen einer Umkehrfunktion zeichnen willst, spiegelst du ihn an der Winkelhalbierenden \\( y = x \\). Was bedeutet dieses Vertauschen von Achsen für die mathematische Schreibweise? (Skript S.15)",
+      "merksatz": "Urbilder injektiver Funktionen sind eindeutige Mengen (Umkehrfunktion)",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Was zeichnet eine klassische eindimensionale reelle Funktion \\( f(x)\\colon \\mathbb{R} \\to \\mathbb{R} \\) aus?",
+      "answers": [
+        "Sie ordnet jeder einzelnen Zahl \\( x \\) aus der Definitionsmenge genau eine Zahl \\( y \\) aus der Zielmenge zu",
+        "Sie ordnet jedem Punkt in der Ebene (X, Y) gleichzeitig eine neue Zahl Z zu",
+        "Sie besitzt immer genau eine einzige Nullstelle und darf die X-Achse kein zweites Mal schneiden",
+        "Sie verläuft im Koordinatensystem immer als eine perfekt gerade, eindimensionale Linie"
+      ],
+      "correct": 0,
+      "tipp": "1 D bezieht sich auf Eingangsvariable und Funktionswert (Skript S. 6)",
+      "merksatz": "1D-Funktion heißt: Eine Zahl geht rein, eine Zahl kommt raus",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Was beschreibt der Wertebereich \\( W \\) einer Funktion?",
+      "answers": [
+        "Alle Zahlen, die man als tatsächliche Ergebnisse (y-Werte) herausbekommen kann, wenn man alle erlaubten x-Werte einsetzt",
+        "Alle Zahlen, die man für die Variable \\( x \\) in die Funktion einsetzen darf",
+        "Die Steigung, die der Graph an seinen Extrempunkten annimmt",
+        "Die Punkte, an denen der Graph die x-Achse schneidet"
+      ],
+      "correct": 0,
+      "tipp": "Wertebereich bezieht sich auf die y-Werte\nSkript Seite 6",
+      "merksatz": "Wertebereich = alle erzielbaren Y-Werte",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Welchen Grad besitzt eine konstante Polynomfunktion der Form \\( f(x) = a_0 \\) mit \\( a_0 \\neq 0 \\)",
+      "answers": [
+        "Grad 0",
+        "Grad 1",
+        "Grad \\( a_0 \\)",
+        "Ein solches Polynom besitzt keinen definierbaren Grad"
+      ],
+      "correct": 0,
+      "tipp": "Was ist die höchste Potenz der Variablen?",
+      "merksatz": "Polynomgrad = höchster Exponent der Variable\n(gibt an wie viele Nullstellen höchstens möglich sind)",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Was ist die wichtigste Eigenschaft, die jede lineare Funktion \\( f(x) = m \\cdot x + n \\) auszeichnet?",
+      "answers": [
+        "Sie besitzt eine konstante Steigerungsrate. Das bedeutet: Ein gleich großer Schritt nach rechts führt überall auf dem Graphen zur exakt gleichen Höhenänderung",
+        "Der Graph geht immer zwingend durch den Koordinatenursprung (0|0)",
+        "Wenn man den x-Wert verdoppelt, verdoppelt sich automatisch auch der zugehörige y-Wert",
+        "Der Exponent der Variablen x muss mindestens 2 sein, damit die Linie gerade verläuft"
+      ],
+      "correct": 0,
+      "tipp": "Lineare Funktionen drücken „je mehr desto mehr“ oder „je mehr desto weniger“ Zusammenhänge aus",
+      "merksatz": "Lineare Funktionen haben eine konstante Steigung",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Sei \\( f\\colon \\mathcal{D} \\to \\mathcal{W} \\) eine Funktion und \\( y \\in \\mathcal{W} \\) ein Element der Zielmenge. Was genau beschreibt das Urbild \\( f^{-1}(y) \\)?",
+      "answers": [
+        "Es ist die Menge aller Elemente \\( x \\in \\mathcal{D} \\), deren Funktionswert \\( f(x) \\) gleich \\( y \\) ist",
+        "Es ist der Kehrwert der Funktion, also die Menge aller Punkte mit dem Wert \\( \\frac{1}{f(x)} \\)",
+        "Das Urbild existiert überhaupt nur dann, wenn die Funktion \\( f \\) bijektiv ist und man die Umkehrfunktion bilden kann",
+        "Es beschreibt die Menge aller \\( y \\)-Werte, die durch Einsetzen von \\( x \\) erreicht werden können"
+      ],
+      "correct": 0,
+      "tipp": "Denk an die umgekehrte Richtung: Welches \\( x \\) führt zum gewünschten \\( y \\)? (Skript S.14)",
+      "merksatz": "Urbild = Menge aller x die durch die Funktion f zu genau diesem y führen",
+      "difficulty": "easy"
+    }
+  ]
+}

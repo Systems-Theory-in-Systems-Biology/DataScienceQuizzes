@@ -127,10 +127,10 @@ function showQuestion() {
     merksatzContainer.textContent = "";
     nextBtn.style.display = "none";
 
-    if (q.hint) {
+    if (q.tipp) {
         tippBtn.style.display = "block";
         tippBtn.onclick = () => {
-            tippContainer.textContent = `Tipp: ${q.hint}`;
+            tippContainer.textContent = `Tipp: ${q.tipp}`;
             tippContainer.style.display = "block";
         };
     } else {
@@ -193,8 +193,8 @@ function checkAnswer(selectedIndex, clickedButton) {
         allButtons[q.correct].classList.add("correct");
     }
 
-    if (q.note) {
-        merksatzContainer.textContent = `Merksatz: ${q.note}`;
+    if (q.merksatz) {
+        merksatzContainer.textContent = `Merksatz: ${q.merksatz}`;
         merksatzContainer.style.display = "block";
     }
 

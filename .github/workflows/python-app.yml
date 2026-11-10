@@ -86,7 +86,7 @@ jobs:
         if: steps.excel.outputs.file != ''
         env:
           INPUT_XLSX: ${{ steps.excel.outputs.file }}
-        run: python converter.py "$INPUT_XLSX"
+        run: python Files/converter.py "$INPUT_XLSX"
 
       - name: Generierte JSON bereitstellen
         if: steps.excel.outputs.file != ''

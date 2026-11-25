@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Data Science I Quizzes</title>
-     <script src="js/mathjax/mathjax/tex-mml-chtml.js"></script>
+    <script src="js/mathjax/mathjax/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="js/katex/katex.min.css">
+    <script src="js/katex/katex.min.js"></script>
+    <script src="js/katex/auto-render.min.js"></script>
+     <script src="fragen/fragen.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="darkmode.js" defer></script>
 </head>
@@ -22,7 +26,9 @@
     <div id="quiz-area" style="display: none;">
         <div id="progress"></div>
         <p id="question-text"></p>
+        <p id="answer-hint"></p>
         <div id="answers"></div>
+        <button id="check-btn" style="display: none;">Antwort prüfen</button>
 
         <button id="tipp-btn" title="Tipp anzeigen" style="display: none;">?</button>
         <div id="tipp-container" style="display: none;"></div>
@@ -35,6 +41,12 @@
 
     </div>
     <script src="main.js"></script>
+    <footer>
+        <p style="text-align: center; margin-top: 40px; font-size: 0.9rem; color: #666;">
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+        </p>
+    </footer>
 </body>
 
 </html>

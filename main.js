@@ -7,7 +7,7 @@ const IMAGE_FOLDER = 'bilder/';
 
 // Schalter für Funktionen, die schon eingebaut, aber noch ausgeblendet sind.
 // Auf true setzen, sobald genug Fragen vorhanden sind.
-const SHOW_TOPICS = true;       // Auswahl nach Thema (Spalte "Thema")
+const SHOW_TOPICS = false;       // Auswahl nach Thema (Spalte "Thema")
 const SHOW_DIFFICULTY = false;   // Auswahl nach Schwierigkeit (Spalte "Schwierigkeit")
 
 // Antworten in zufälliger Reihenfolge anzeigen?
